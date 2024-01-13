@@ -21,6 +21,7 @@
             require-prior-idle-ms = <150>;
             hold-trigger-key-positions = <31 39 40 41 30 18 19 32 20 21 33 35 34 23 22 10 11 9 8 7 6>;
             flavor = "balanced";
+            hold-trigger-on-release;             // delay positional check until key-release
         };
 
         hmr: homewrow_mods_right {
@@ -34,6 +35,7 @@
             require-prior-idle-ms = <150>;
             hold-trigger-key-positions = <38 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
             flavor = "balanced";
+            hold-trigger-on-release;             // delay positional check until key-release
         };
 
         layers: layers {
