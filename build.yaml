@@ -19,8 +19,12 @@
 ---
 include:
   - board: nice_nano_v2
+    shield: cyngus_left
+  - board: nice_nano_v2
+    shield: cyngus_right
+  - board: nice_nano_v2
+    shield: settings_reset
+  - board: nice_nano_v2
     shield: corne_left
   - board: nice_nano_v2
     shield: corne_right
-  - board: nice_nano_v2
-    shield: settings_reset
