@@ -26,6 +26,3 @@ include:
     shield: charybdis_right
     keymap: charybdis_qwerty
     artifact-name: charybdis_qwerty_right
-  - board: nice_nano_v2
-    shield: charybdis_right
-    snippet: zmk-usb-logging
