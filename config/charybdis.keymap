@@ -54,10 +54,7 @@
             layers = <0>;
         };
 
-        BASE_or_EXTRAS {
-            bindings = <&td_bore>;
-            key-positions = <38 39>;
-        };
+
     };
 
     macros {
