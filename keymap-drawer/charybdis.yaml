@@ -31,8 +31,8 @@ layers:
   - V
   - B
   - N
-  - {t: M, h: LCLK}
-  - {t: ',', h: RCLK}
+  - M
+  - ','
   - .
   - /
   - +
