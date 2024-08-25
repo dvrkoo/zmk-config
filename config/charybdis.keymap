@@ -10,6 +10,45 @@
 };
 
 / {
+    trackball_listener {
+        compatible = "zmk,input-behavior-listener";
+        device = <&vtrackball>;
+        layers = <0>;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
+        scale-multiplier = <1>;
+        scale-divisor = <6>;
+    };
+
+    trackball_snipe_listener {
+        compatible = "zmk,input-behavior-listener";   
+        device = <&vtrackball>;
+        layers = <7>;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
+        scale-multiplier = <1>;
+        scale-divisor = <16>;
+    };
+
+    trackball_scroll_listener {
+        compatible = "zmk,input-behavior-listener";
+        device = <&vtrackball>;
+        layers = <2>;
+        evt-type = <INPUT_EV_REL>;            
+        x-input-code = <INPUT_REL_MISC>;
+        y-input-code = <INPUT_REL_WHEEL>;
+        y-invert;
+        bindings = <&ib_wheel_scaler 1 8>;
+    };
+
+    ib_wheel_scaler: ib_wheel_scaler {
+        compatible = "zmk,input-behavior-scaler";
+        #binding-cells = <2>;
+        evt-type = <INPUT_EV_REL>;
+        input-code = <INPUT_REL_WHEEL>;
+    };
     behaviors {
         hml: homewrow_mods_left {
             compatible = "zmk,behavior-hold-tap";
@@ -114,7 +153,7 @@ keymap {
             bindings = <
 &kp GRAVE   &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp MINUS
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &mkp LCLK &mkp RCLK   &trans     &trans  &trans
+&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
 
                                         &kp LGUI      &trans        &kp SPACE       &kp RET   &trans              >;
         };
@@ -129,7 +168,7 @@ keymap {
             bindings = <
 &kp TILDE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTERISK  &kp LPAR      &kp RPAR  &kp UNDER
 &kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp RA(LBKT)  &kp RA(RBKT)  &kp BSLH  &kp LEFT_BRACKET
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp RA(LBRC)  &kp RA(RBRC)  &kp PIPE  &kp TILDE
+&kp LSHFT  &trans    &mkp LCLK &mkp MCLK &mkp RCLK &trans       &kp UNDER  &kp PLUS   &kp RA(LBRC)  &kp RA(RBRC)  &kp PIPE  &kp TILDE
                              &kp LGUI  &trans    &kp SPACE    &kp RET    &trans                >;
         };
 
