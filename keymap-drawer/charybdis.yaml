@@ -210,9 +210,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
 combos:
-- p: [8, 9]
-  k: DELETE
-  l: [default]
 - p: [17, 18]
   k: CAPS WORD
   l: [default]
